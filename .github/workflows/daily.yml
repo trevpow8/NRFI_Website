@@ -1,0 +1,31 @@
+name: daily-predictions
+
+# 09:00 UTC every day.  Adjust if you like.
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:      # allows manual run from the GH UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- Python environment ---
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - run: pip install -r backend/requirements.txt
+
+      # --- generate today.json ---
+      - run: python backend/daily_prediction.py
+
+      # --- commit the new file ---
+      - name: Commit & push data/today.json
+        run: |
+          git config user.name  "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/today.json
+          git commit -m "chore: daily predictions $(date -u +%F)" || echo "No changes"
+          git push
