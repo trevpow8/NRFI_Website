@@ -1,0 +1,64 @@
+.app-container {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.game-list {
+  list-style: none;
+  padding: 0;
+}
+
+.game-item {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.matchup {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.game-info {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.pitchers span {
+  display: block;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.team-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0 6px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.recommendation-tag {
+  font-weight: bold;
+  margin-top: 6px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #e0f7fa;
+  color: #00796b;
+}
