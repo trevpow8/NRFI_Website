@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-const teamIdMap: Record<string, number> = {
+const teamIdMap = {
   'Arizona Diamondbacks': 109,
   'Atlanta Braves': 144,
   'Baltimore Orioles': 110,
@@ -34,39 +34,38 @@ const teamIdMap: Record<string, number> = {
   'Washington Nationals': 120,
 };
 
-type Game = {
-  game_id: string;
-  home_team: string;
-  away_team: string;
-  game_time: string;
-  status: string;
-  home_pitcher: string;
-  away_pitcher: string;
-  recommendation: string;
-};
+// type Game = {
+//   game_id: string;
+//   home_team: string;
+//   away_team: string;
+//   game_time: string;
+//   status: string;
+//   home_pitcher: string;
+//   away_pitcher: string;
+//   recommendation: string;
+// };
 
-function getTeamLogo(teamName: string): string {
+function getTeamLogo(teamName) {
   const teamId = teamIdMap[teamName];
   return teamId ? `https://www.mlbstatic.com/team-logos/${teamId}.svg` : '';
 }
 
 function App() {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
-    fetch(`${apiUrl}/api/games`)
-      .then((res) => res.json())
-      .then((data) => {
-        setGames(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to fetch games:', err);
-        setLoading(false);
-      });
-  }, []);
+useEffect(() => {
+  fetch('/data/today.json')
+    .then((res) => res.json())
+    .then((data) => {
+      setGames(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error('Failed to fetch games:', err);
+      setLoading(false);
+    });
+}, []);
 
   return (
     <div className="app-container">
@@ -115,8 +114,8 @@ function App() {
                   <span>
                     <strong>{game.home_team} SP:</strong> {game.home_pitcher}
                   </span>
-                  <div className="recommendation-tag">{game.recommendation}</div>
                 </div>
+                <div className="recommendation-tag">{game.recommendation}</div>
               </li>
             ))}
         </ul>
