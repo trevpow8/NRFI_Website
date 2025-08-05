@@ -1,10 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import statsapi
 from datetime import date
 from pydantic import BaseModel
 import random
+import json, pathlib
 
 app = FastAPI()
 

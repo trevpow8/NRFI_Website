@@ -1,0 +1,42 @@
+/* Copy of original styles */
+.app-container {
+  font-family: system-ui, sans-serif;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.game-list {
+  list-style: none;
+  padding: 0;
+}
+
+.game-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.team-logo {
+  width: 24px;
+  height: 24px;
+}
+
+.recommendation-tag {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  display: inline-block;
+}

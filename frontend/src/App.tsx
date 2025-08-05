@@ -31,7 +31,7 @@ const teamIdMap: Record<string, number> = {
   'Tampa Bay Rays': 139,
   'Texas Rangers': 140,
   'Toronto Blue Jays': 141,
-  'Washington Nationals': 120
+  'Washington Nationals': 120,
 };
 
 type Game = {
@@ -47,9 +47,7 @@ type Game = {
 
 function getTeamLogo(teamName: string): string {
   const teamId = teamIdMap[teamName];
-  return teamId
-    ? `https://www.mlbstatic.com/team-logos/${teamId}.svg`
-    : '';
+  return teamId ? `https://www.mlbstatic.com/team-logos/${teamId}.svg` : '';
 }
 
 function App() {
@@ -57,13 +55,14 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/games')
-      .then(res => res.json())
-      .then(data => {
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+    fetch(`${apiUrl}/api/games`)
+      .then((res) => res.json())
+      .then((data) => {
         setGames(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('Failed to fetch games:', err);
         setLoading(false);
       });
@@ -79,24 +78,47 @@ function App() {
       ) : (
         <ul className="game-list">
           {games
-            .filter(game => game.home_pitcher && game.away_pitcher && game.home_pitcher !== 'TBD' && game.away_pitcher !== 'TBD')
-            .map(game => (
+            .filter(
+              (game) =>
+                game.home_pitcher &&
+                game.away_pitcher &&
+                game.home_pitcher !== 'TBD' &&
+                game.away_pitcher !== 'TBD'
+            )
+            .map((game) => (
               <li key={game.game_id} className="game-item">
                 <div className="matchup">
-                  <img src={getTeamLogo(game.away_team)} alt={game.away_team} className="team-logo" />
+                  <img
+                    src={getTeamLogo(game.away_team)}
+                    alt={game.away_team}
+                    className="team-logo"
+                  />
                   <strong>{game.away_team}</strong> @ <strong>{game.home_team}</strong>
-                  <img src={getTeamLogo(game.home_team)} alt={game.home_team} className="team-logo" />
+                  <img
+                    src={getTeamLogo(game.home_team)}
+                    alt={game.home_team}
+                    className="team-logo"
+                  />
                 </div>
                 <div className="game-info">
-                  {new Date(game.game_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} — {game.status}
+                  {new Date(game.game_time).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}{' '}
+                  — {game.status}
                 </div>
                 <div className="pitchers">
-                  <span><strong>{game.away_team} SP:</strong> {game.away_pitcher}</span><br />
-                  <span><strong>{game.home_team} SP:</strong> {game.home_pitcher}</span>
+                  <span>
+                    <strong>{game.away_team} SP:</strong> {game.away_pitcher}
+                  </span>
+                  <br />
+                  <span>
+                    <strong>{game.home_team} SP:</strong> {game.home_pitcher}
+                  </span>
                   <div className="recommendation-tag">{game.recommendation}</div>
                 </div>
               </li>
-          ))}
+            ))}
         </ul>
       )}
     </div>
