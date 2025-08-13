@@ -42,16 +42,12 @@ function getTeamLogo(teamName) {
 function App() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [lastUpdated, setLastUpdated] = useState(null);
-  const [modelVersion, setModelVersion] = useState(null);
 
 useEffect(() => {
-  fetch('/api/today')
+  fetch('/today.json')
     .then((res) => res.json())
     .then((data) => {
-      setGames(data.items || []);
-      setLastUpdated(data.last_updated || null);
-      setModelVersion(data.model_version || null);
+      setGames(Array.isArray(data) ? data : []);
       setLoading(false);
     })
     .catch((err) => {
@@ -63,20 +59,6 @@ useEffect(() => {
   return (
     <div className="app-container">
       <h1>Today's MLB Games</h1>
-      {(lastUpdated || modelVersion) && (
-        <div style={{
-          display: 'inline-block',
-          fontSize: 12,
-          padding: '4px 8px',
-          background: '#f5f5f5',
-          borderRadius: 6,
-          marginBottom: 12
-        }}>
-          {modelVersion && <span>model: <strong>{modelVersion}</strong></span>}
-          {modelVersion && lastUpdated && <span style={{ margin: '0 6px' }}>•</span>}
-          {lastUpdated && <span>updated: <strong>{new Date(lastUpdated).toLocaleString()}</strong></span>}
-        </div>
-      )}
       {loading ? (
         <p>Loading...</p>
       ) : games.length === 0 ? (

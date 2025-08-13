@@ -54,7 +54,7 @@ coverage/
 logs/
 *.log
 
-# Legacy local data (no longer committed)
-today.json
-frontend/public/today.json
+# Data snapshots committed by simple cron
+# (keep tracked so site can serve latest snapshot)
+# intentionally not ignoring frontend/public/today.json
 
