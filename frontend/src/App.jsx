@@ -34,17 +34,6 @@ const teamIdMap = {
   'Washington Nationals': 120,
 };
 
-// type Game = {
-//   game_id: string;
-//   home_team: string;
-//   away_team: string;
-//   game_time: string;
-//   status: string;
-//   home_pitcher: string;
-//   away_pitcher: string;
-//   recommendation: string;
-// };
-
 function getTeamLogo(teamName) {
   const teamId = teamIdMap[teamName];
   return teamId ? `https://www.mlbstatic.com/team-logos/${teamId}.svg` : '';
@@ -55,10 +44,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-  fetch('/data/today.json')
+  fetch('/api/today')
     .then((res) => res.json())
     .then((data) => {
-      setGames(data);
+      setGames(data.items || []);
       setLoading(false);
     })
     .catch((err) => {
@@ -115,7 +104,13 @@ useEffect(() => {
                     <strong>{game.home_team} SP:</strong> {game.home_pitcher}
                   </span>
                 </div>
-                <div className="recommendation-tag">{game.recommendation}</div>
+                <div className="recommendation-tag">
+                  {game.recommendation} {game.yrfi_probability != null && (
+                    <span style={{ marginLeft: 8, fontWeight: 400 }}>
+                      ({Math.round((game.yrfi_probability) * 100)}% YRFI)
+                    </span>
+                  )}
+                </div>
               </li>
             ))}
         </ul>

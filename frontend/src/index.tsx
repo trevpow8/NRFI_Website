@@ -19,7 +19,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/today.json') // Assumes today.json is in public/data/
+    fetch('..today.json')
       .then((res) => res.json())
       .then((data) => {
         setGames(data);
