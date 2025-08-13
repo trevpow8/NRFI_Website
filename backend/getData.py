@@ -13,7 +13,7 @@ def parse_games(games):
         game_info = {
             'game_id': game.get('game_id'),
             'date': game.get('game_date'),
-            'game_time': game.get('game_time'),
+            'game_time': game.get('game_datetime'),
             'away_team': game.get('away_name'),
             'home_team': game.get('home_name'),
             'home_pitcher': game.get('home_probable_pitcher'),
@@ -23,8 +23,7 @@ def parse_games(games):
         parsed_games.append(game_info)
     return parsed_games
 
-def save_games_to_json(games, filename='today.json'):
-
+def save_games_to_json(games, filename='frontend/public/today.json'):
     with open(filename, 'w') as f:
         json.dump(games, f, indent=4, default=str)
 

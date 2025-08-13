@@ -1,0 +1,152 @@
+[
+    {
+        "game_id": 776759,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T18:10:00Z",
+        "away_team": "Washington Nationals",
+        "home_team": "Kansas City Royals",
+        "home_pitcher": "Seth Lugo",
+        "away_pitcher": "Jake Irvin",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776754,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T18:10:00Z",
+        "away_team": "Detroit Tigers",
+        "home_team": "Chicago White Sox",
+        "home_pitcher": "Shane Smith",
+        "away_pitcher": "Troy Melton",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776755,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T18:10:00Z",
+        "away_team": "Pittsburgh Pirates",
+        "home_team": "Milwaukee Brewers",
+        "home_pitcher": "Brandon Woodruff",
+        "away_pitcher": "Mitch Keller",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776758,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T18:15:00Z",
+        "away_team": "Colorado Rockies",
+        "home_team": "St. Louis Cardinals",
+        "home_pitcher": "Michael McGreevy",
+        "away_pitcher": "Austin Gomber",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776746,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T18:35:00Z",
+        "away_team": "Arizona Diamondbacks",
+        "home_team": "Texas Rangers",
+        "home_pitcher": "Merrill Kelly",
+        "away_pitcher": "Zac Gallen",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776749,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T19:45:00Z",
+        "away_team": "San Diego Padres",
+        "home_team": "San Francisco Giants",
+        "home_pitcher": "Kai-Wei Teng",
+        "away_pitcher": "Nick Pivetta",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776765,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T21:10:00Z",
+        "away_team": "Philadelphia Phillies",
+        "home_team": "Cincinnati Reds",
+        "home_pitcher": "Hunter Greene",
+        "away_pitcher": "Cristopher S\u00e1nchez",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776761,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T22:35:00Z",
+        "away_team": "Seattle Mariners",
+        "home_team": "Baltimore Orioles",
+        "home_pitcher": "Trevor Rogers",
+        "away_pitcher": "Logan Gilbert",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776766,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T22:40:00Z",
+        "away_team": "Miami Marlins",
+        "home_team": "Cleveland Guardians",
+        "home_pitcher": "Gavin Williams",
+        "away_pitcher": "Eury P\u00e9rez",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776760,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T23:05:00Z",
+        "away_team": "Minnesota Twins",
+        "home_team": "New York Yankees",
+        "home_pitcher": "Cam Schlittler",
+        "away_pitcher": "Joe Ryan",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776757,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T23:07:00Z",
+        "away_team": "Chicago Cubs",
+        "home_team": "Toronto Blue Jays",
+        "home_pitcher": "Kevin Gausman",
+        "away_pitcher": "Cade Horton",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776753,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T23:10:00Z",
+        "away_team": "Boston Red Sox",
+        "home_team": "Houston Astros",
+        "home_pitcher": "Hunter Brown",
+        "away_pitcher": "Walker Buehler",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776756,
+        "date": "2025-08-13",
+        "game_time": "2025-08-13T23:10:00Z",
+        "away_team": "Atlanta Braves",
+        "home_team": "New York Mets",
+        "home_pitcher": "David Peterson",
+        "away_pitcher": "Carlos Carrasco",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776752,
+        "date": "2025-08-13",
+        "game_time": "2025-08-14T01:38:00Z",
+        "away_team": "Los Angeles Dodgers",
+        "home_team": "Los Angeles Angels",
+        "home_pitcher": "Kyle Hendricks",
+        "away_pitcher": "Shohei Ohtani",
+        "recommendation": "TBD"
+    },
+    {
+        "game_id": 776751,
+        "date": "2025-08-13",
+        "game_time": "2025-08-14T02:05:00Z",
+        "away_team": "Tampa Bay Rays",
+        "home_team": "Athletics",
+        "home_pitcher": "J.T. Ginn",
+        "away_pitcher": "Drew Rasmussen",
+        "recommendation": "TBD"
+    }
+]
